@@ -1,0 +1,19 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int center, left = 0, right = nums.length - 1;
+        
+        while (left <= right){
+            center = (left + right)/2;
+
+            if (nums[center] == target)
+                return center;
+            if (target < nums[center]) 
+                right = center - 1;
+            else 
+                left = center + 1;
+            
+        }
+        return -1;
+        
+    }
+}
